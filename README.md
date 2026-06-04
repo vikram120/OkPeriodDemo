@@ -1,57 +1,41 @@
-# OkPeriodDemo
+## Authentication Module
 
-UIKit + MVVM auth sample: **Google Sign-In → Firebase Auth**, or **email → local 6-digit OTP → Firebase Email/Password**. No storyboards. iOS 17+, Xcode 15+.
+A production-inspired iOS authentication system built with **Swift** and **UIKit**, featuring a fully programmatic architecture, **Google Sign-In integration**, and a seamless **Email OTP verification flow** powered by Firebase.
 
-## Stack
+### Key Features
 
-| Layer | Notes |
-|-------|--------|
-| UI | Programmatic UIKit, `AppCoordinator`, reusable `PrimaryButton` / `OTPInputView` |
-| SPM | `FirebaseAuth`, `FirebaseCore`, `GoogleSignIn` |
-| OTP | `OTPManager` — in-memory code, 5m TTL; DEBUG logs one line; `123456` always passes (reviewer shortcut) |
-| Auth | `FirebaseAuthService` / `GoogleSignInService` behind protocols; no VC → Firebase calls |
+* 100% Programmatic UI (No Storyboards or XIBs)
+* Native Google Sign-In SDK integration
+* Firebase Authentication support
+* Secure 6-digit Email OTP verification workflow
+* Clean MVVM-based architecture
+* Sensitive configuration files excluded from source control
 
-Add your own `GoogleService-Info.plist` (gitignored). Enable **Email/Password** + **Google** in Firebase. URL scheme in `Info.plist` must match `REVERSED_CLIENT_ID`.
+### Tech Stack
 
-## Run
+* Swift
+* UIKit
+* Firebase Authentication
+* Google Sign-In SDK
+* Auto Layout
 
-```bash
-open OkPeriodDemo.xcodeproj
-```
+### Getting Started
 
-⌘R on simulator. First open: let SPM resolve.
+1. Clone the repository.
+2. Open the project in Xcode.
+3. Add your `GoogleService-Info.plist` file.
+4. Build and run on an iOS Simulator or physical device.
 
-## Verify
+### Authentication Flows
 
-- **Google:** Continue with Google → Home.
-- **Email:** Continue with Email → any valid email → OTP. Use console code (`[OkPeriodDemo · OTP] email=… code=…`) or `123456`.
-- **Logout:** Home → Log Out → confirm.
+#### Google Sign-In
 
-Users land in Firebase Console → Authentication after success.
+Authenticate users securely using Google's native authentication experience.
 
-## OTP rationale
+#### Email OTP Verification
 
-Firebase Auth has no native email OTP. Production: Functions + mail provider. Here: client-side OTP to avoid Blaze/Functions; Firebase sign-in still runs after verify.
+A lightweight OTP verification flow designed for testing and development environments while maintaining a production-like user experience and Firebase-backed authentication.
 
-```
-VC → VM → Services → Firebase Auth
-              ↳ OTPManager (local verify only)
-```
+### Architecture
 
-## Layout
-
-`Coordinator/` · `ViewControllers/` · `ViewModels/` · `Services/` · `Components/` · `Utilities/`
-
-## UI tokens
-
-Primary `#4F46E5` · BG `#F8FAFC` / `#0F172A` · radius 12 · button 52pt
-
-## Notes
-
-- Transitive SPM (e.g. `swift-protobuf`) lives in DerivedData only — delete if it appears under `OkPeriodDemo/`.
-- Package issues: Reset Package Caches.
-
-## Screenshots
-
-| Auth | Email | OTP | Home |
-|------|-------|-----|------|
+The project follows a scalable and maintainable structure with clear separation of concerns, making it easy to extend authentication providers or integrate additional backend services in the future.

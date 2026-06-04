@@ -1,0 +1,12 @@
+# Xcode / SPM — dependencies belong in DerivedData, not the app source tree
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# Firebase credentials — add your own local copy (see README)
+OkPeriodDemo/GoogleService-Info.plist
+GoogleService-Info.plist
+
+# Accidental local package checkouts (Firebase transitive deps, etc.)
+OkPeriodDemo/swift-protobuf/
+OkPeriodDemo/**/SourcePackages/

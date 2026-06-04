@@ -1,17 +1,17 @@
-## Authentication Module
+# OkPeriodDemo
 
-A production-inspired iOS authentication system built with **Swift** and **UIKit**, featuring a fully programmatic architecture, **Google Sign-In integration**, and a seamless **Email OTP verification flow** powered by Firebase.
+A modern iOS authentication demo built with **Swift** and **UIKit**, showcasing a fully programmatic UI, **Google Sign-In**, and **Email OTP authentication** integrated with Firebase.
 
-### Key Features
+## Features
 
-* 100% Programmatic UI (No Storyboards or XIBs)
-* Native Google Sign-In SDK integration
-* Firebase Authentication support
-* Secure 6-digit Email OTP verification workflow
-* Clean MVVM-based architecture
-* Sensitive configuration files excluded from source control
+* 100% Programmatic UIKit UI (No Storyboards)
+* Google Sign-In using Google's native SDK
+* Firebase Authentication integration
+* 6-Digit Email OTP verification flow
+* Clean and scalable architecture
+* Secure handling of configuration files via `.gitignore`
 
-### Tech Stack
+## Tech Stack
 
 * Swift
 * UIKit
@@ -19,23 +19,23 @@ A production-inspired iOS authentication system built with **Swift** and **UIKit
 * Google Sign-In SDK
 * Auto Layout
 
-### Getting Started
+## Getting Started
 
 1. Clone the repository.
 2. Open the project in Xcode.
 3. Add your `GoogleService-Info.plist` file.
 4. Build and run on an iOS Simulator or physical device.
 
-### Authentication Flows
+## Authentication Flows
 
-#### Google Sign-In
+### Google Sign-In
 
-Authenticate users securely using Google's native authentication experience.
+Sign in securely using a Google account through the native Google authentication experience.
 
-#### Email OTP Verification
+### Email OTP Verification
 
-A lightweight OTP verification flow designed for testing and development environments while maintaining a production-like user experience and Firebase-backed authentication.
+Authenticate users through a 6-digit OTP flow designed to provide a smooth verification experience while leveraging Firebase Authentication.
 
-### Architecture
+## Architecture
 
-The project follows a scalable and maintainable structure with clear separation of concerns, making it easy to extend authentication providers or integrate additional backend services in the future.
+OkPeriodDemo follows a clean, modular structure with a focus on maintainability, scalability, and separation of concerns, making it easy to extend with additional authentication providers or backend services.
